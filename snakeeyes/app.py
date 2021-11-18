@@ -12,13 +12,6 @@ def create_app():
     app.config.from_object('config.settings')
     app.config.from_pyfile('settings.py', silent=True)
 
-    @app.route('/')
-    def index():
-        """
-        Render a hello world response.
-
-        :return: Flask response
-        """
-        return app.config['HELLO']
+    app.register_blueprint(page)
     
     return app

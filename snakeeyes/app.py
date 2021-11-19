@@ -1,5 +1,7 @@
 from flask import Flask
 
+from snakeeyes.blueprints.page import page
+
 
 def create_app():
     """
@@ -13,5 +15,5 @@ def create_app():
     app.config.from_pyfile('settings.py', silent=True)
 
     app.register_blueprint(page)
-    
+
     return app
